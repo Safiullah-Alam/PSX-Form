@@ -4,14 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PSX Account Opening Form</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <h1>PSX Account Opening Form</h1>
 
+    <h1>Pakistan Stock Exchange – Account Opening Form</h1>
+    <p>Please fill the form carefully. All documents must be clear and readable.</p>
 
+    <!-- NETLIFY FORM START -->
+    <form name="psx-account-opening"
+          method="POST"
+          data-netlify="true"
+          enctype="multipart/form-data">
+
+        <input type="hidden" name="form-name" value="psx-account-opening">
+
+        <!-- ================= ACCOUNT TYPE ================= -->
+        <h2>Account Type</h2>
+        <select id="accountType" name="account_type" required>
+            <option value="">Select Account Type</option>
+            <option value="Sahulat">Easy (Sahulat) Account</option>
+            <option value="Salaried">Salaried Account</option>
+        </select>
+
+        <!-- ================= PERSONAL INFORMATION ================= -->
+        <h2>Personal Information</h2>
+
+        <label>Email Address</label>
+        <input type="email" name="email" required>
+
+        <label>Mobile Number (Registered on CNIC)</label>
+        <input type="tel" name="mobile" required>
+
+        <label>Mother Name</label>
+        <input type="text" name="mother_name" required>
+
+        <label>Place of Birth</label>
+        <input type="text" name="place_of_birth" required>
+
+        <label>Marital Status</label>
+        <select name="marital_status" required>
+            <option value="">Select</option>
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+        </select>
+
+        <label>Fiqah</label>
+        <select name="fiqah" required>
+            <option value="">Select Fiqah</option>
+            <option value="Sunni">Sunni</option>
+            <option value="Shia">Shia</option>
+            <option value="Ahle Hadis">Ahle Hadis</option>
+        </select>
+
+        <!-- ================= DOCUMENT UPLOADS ================= -->
+        <h2>Required Documents</h2>
+
+        <label>CNIC Front (Clear Image)</label>
+        <input type="file" name="cnic_front" accept=".jpg,.jpeg,.png,.pdf" required>
+
+        <label>CNIC Back (Clear Image)</label>
+        <input type="file" name="cnic_back" accept=".jpg,.jpeg,.png,.pdf" required>
+
+        <label>IBAN Proof (Cheque / Statement / Certificate)</label>
+        <input type="file" name="iban_proof" accept=".jpg,.jpeg,.png,.pdf" required>
+
+        <label>Signature Specimen (2 Signatures on Plain Paper)</label>
+        <input type="file" name="signature_specimen" accept=".jpg,.jpeg,.png,.pdf" required>
+
+        <label>Nominee CNIC Front</label>
+        <input type="file" name="nominee_cnic_front" accept=".jpg,.jpeg,.png,.pdf" required>
+
+        <label>Nominee CNIC Back</label>
+        <input type="file" name="nominee_cnic_back" accept=".jpg,.jpeg,.png,.pdf" required>
+
+        <label>Initial Deposit Confirmation Slip (With Date & Time)</label>
+        <input type="file" name="deposit_slip" accept=".jpg,.jpeg,.png,.pdf" required>
+
+        <!-- ================= SALARIED ONLY ================= -->
+        <div id="salariedFields" style="display:none;">
+            <h2>Salaried Person Documents</h2>
+
+            <label>Last 3 Month Salary Slip / Salary Certificate</label>
+            <input type="file" name="salary_slip" accept=".jpg,.jpeg,.png,.pdf">
+
+            <label>Last 3 Month Bank Statement (Salary Credit)</label>
+            <input type="file" name="salary_bank_statement" accept=".jpg,.jpeg,.png,.pdf">
+        </div>
+
+        <!-- ================= CONSENT ================= -->
+        <h2>Declaration</h2>
+
+        <label>
+            <input type="checkbox" required>
+            I authorize the broker to use my information and documents for
+            Pakistan Stock Exchange account opening purpose only.
+        </label>
+
+        <br><br>
+        <button type="submit">Submit Application</button>
+
+    </form>
+    <!-- NETLIFY FORM END -->
+
+    <!-- JS -->
     <script src="script.js"></script>
-
 </body>
 </html>
