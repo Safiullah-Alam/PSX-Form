@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,20 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+    <header class="site-header">
+        <img src="assets/logo_munirkhanani.png" alt="Broker Logo" class="logo">
+    </header>
+
 
     <h1>Pakistan Stock Exchange – Account Opening Form</h1>
     <p>Please fill the form carefully. All documents must be clear and readable.</p>
 
     <!-- NETLIFY FORM START -->
-    <form name="psx-account-opening"
-          method="POST"
-          data-netlify="true"
-          action="/thank-you.html"
-          enctype="multipart/form-data">
+    <form name="psx-account-opening" method="POST" data-netlify="true" action="thank-you.html"
+        enctype="multipart/form-data">
 
         <input type="hidden" name="form-name" value="psx-account-opening">
 
@@ -39,7 +43,7 @@
         <label>Mobile Number (Registered on CNIC)</label>
         <input type="tel" name="mobile" required>
 
-        <label>Mother Name</label>
+        <label>Mother Name (As per CNIC)</label>
         <input type="text" name="mother_name" required>
 
         <label>Place of Birth</label>
@@ -60,6 +64,26 @@
             <option value="Ahle Hadis">Ahle Hadis</option>
         </select>
 
+        <h2>Bank Details (IBAN)</h2>
+
+        <label>How would you like to provide IBAN?</label>
+        <select id="ibanOption" name="iban_option" required>
+            <option value="">Select Option</option>
+            <option value="file">Upload IBAN Proof (Cheque / Statement)</option>
+            <option value="manual">Enter IBAN Manually</option>
+        </select>
+
+        <div id="ibanFileField" style="display:none;">
+            <label>IBAN Proof (Image or PDF)</label>
+            <input type="file" name="iban_proof" accept=".jpg,.jpeg,.png,.pdf">
+        </div>
+
+        <div id="ibanManualField" style="display:none;">
+            <label>IBAN Number (24 Digits)</label>
+            <input type="text" name="iban_number" placeholder="PK73HABB0012345678901234">
+        </div>
+
+
         <!-- ================= DOCUMENT UPLOADS ================= -->
         <h2>Required Documents</h2>
 
@@ -69,20 +93,15 @@
         <label>CNIC Back (Clear Image)</label>
         <input type="file" name="cnic_back" accept=".jpg,.jpeg,.png,.pdf" required>
 
-        <label>IBAN Proof (Cheque / Statement / Certificate)</label>
-        <input type="file" name="iban_proof" accept=".jpg,.jpeg,.png,.pdf" required>
-
         <label>Signature Specimen (2 Signatures on Plain Paper)</label>
         <input type="file" name="signature_specimen" accept=".jpg,.jpeg,.png,.pdf" required>
 
-        <label>Nominee CNIC Front</label>
+        <label>Nominee CNIC Front (For example Father/Mother/Brother/Sister)</label>
         <input type="file" name="nominee_cnic_front" accept=".jpg,.jpeg,.png,.pdf" required>
 
-        <label>Nominee CNIC Back</label>
+        <label>Nominee CNIC Back (For example Father/Mother/Brother/Sister)</label>
         <input type="file" name="nominee_cnic_back" accept=".jpg,.jpeg,.png,.pdf" required>
 
-        <label>Initial Deposit Confirmation Slip (With Date & Time)</label>
-        <input type="file" name="deposit_slip" accept=".jpg,.jpeg,.png,.pdf" required>
 
         <!-- ================= SALARIED ONLY ================= -->
         <div id="salariedFields" style="display:none;">
@@ -113,4 +132,5 @@
     <!-- JS -->
     <script src="script.js"></script>
 </body>
+
 </html>
