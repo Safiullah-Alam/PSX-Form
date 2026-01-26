@@ -52,6 +52,76 @@ h2 {
     color: #0b3c6f;
 }
 
+.helper {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* ===== WHATSAPP FLOATING BUTTON ===== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-float img {
+    width: 32px;
+    height: 32px;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== WHATSAPP TOOLTIP ===== */
+.whatsapp-tooltip {
+    position: absolute;
+    right: 70px;
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(5px);
+    transition: all 0.25s ease;
+}
+
+/* Tooltip Arrow */
+.whatsapp-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    transform: translateY(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #1f2937;
+}
+
+/* Show tooltip on hover */
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 /* ===== LABELS ===== */
 label {
     display: block;

@@ -11,20 +11,14 @@ accountType.addEventListener("change", function () {
     }
 });
 
-// IBAN Select Handle
+const fiqahSelect = document.querySelector('select[name="fiqah"]');
+const otherFiqahField = document.getElementById("otherFiqahField");
 
-const ibanOption = document.getElementById("ibanOption");
-const ibanFileField = document.getElementById("ibanFileField");
-const ibanManualField = document.getElementById("ibanManualField");
-
-ibanOption.addEventListener("change", function () {
-    ibanFileField.style.display = "none";
-    ibanManualField.style.display = "none";
-
-    if (this.value === "file") {
-        ibanFileField.style.display = "block";
-    } else if (this.value === "manual") {
-        ibanManualField.style.display = "block";
+fiqahSelect.addEventListener("change", function () {
+    if (this.value === "Other") {
+        otherFiqahField.style.display = "block";
+    } else {
+        otherFiqahField.style.display = "none";
     }
 });
 

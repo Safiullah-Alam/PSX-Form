@@ -12,6 +12,13 @@
 
 <body>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923238048183" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle group-hover:scale-110 transition-transform"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+        <span class="whatsapp-tooltip">Need help with the form?</span>
+    </a>
+
+
     <header class="site-header">
         <img src="assets/logo_munirkhanani.png" alt="Broker Logo" class="logo">
     </header>
@@ -31,7 +38,7 @@
         <select id="accountType" name="account_type" required>
             <option value="">Select Account Type</option>
             <option value="Sahulat">Easy (Sahulat) Account</option>
-            <option value="Salaried">Salaried Account</option>
+            <option value="Salaried">Normal Account</option>
         </select>
 
         <!-- ================= PERSONAL INFORMATION ================= -->
@@ -62,25 +69,25 @@
             <option value="Sunni">Sunni</option>
             <option value="Shia">Shia</option>
             <option value="Ahle Hadis">Ahle Hadis</option>
+            <option value="Other">Other</option>
         </select>
+
+        <div id="otherFiqahField" style="display:none;">
+            <label>Please specify Fiqah</label>
+            <input type="text" name="fiqah_other" placeholder="Enter your Fiqah">
+        </div>
+
 
         <h2>Bank Details (IBAN)</h2>
 
-        <label>How would you like to provide IBAN?</label>
-        <select id="ibanOption" name="iban_option" required>
-            <option value="">Select Option</option>
-            <option value="file">Upload IBAN Proof (Cheque / Statement)</option>
-            <option value="manual">Enter IBAN Manually</option>
-        </select>
-
-        <div id="ibanFileField" style="display:none;">
+        <div id="ibanFileField">
             <label>IBAN Proof (Image or PDF)</label>
+            <small class="helper">
+                Example: Bank statement / Account maintenance certificate /
+                Mobile App statement (e.g. Bank App → View Statement → Download PDF)
+                IBAN must be clearly visible.
+            </small>
             <input type="file" name="iban_proof" accept=".jpg,.jpeg,.png,.pdf">
-        </div>
-
-        <div id="ibanManualField" style="display:none;">
-            <label>IBAN Number (24 Digits)</label>
-            <input type="text" name="iban_number" placeholder="PK73HABB0012345678901234">
         </div>
 
 
